@@ -8,9 +8,6 @@ Sistema de dashboard administrativo para reclutamiento y control de pagos.
 - MySQL
 - CSS avanzado (animaciones, UI moderna)
 
-## Demo
-🌐 https://tuusuario.github.io/dashboard-demo
-
 Credenciales demo:
 Correo: demo@dashboard.com  
 Contraseña: demo123
