@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/sistema-control-piscina-gimasio/', // 👈 Clave para que GitHub Pages encuentre los assets
+  base: '/dashboard/', // 👈 Clave para que GitHub Pages encuentre los assets
   plugins: [react()],
   server: {
     proxy: {
