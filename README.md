@@ -29,6 +29,7 @@ El proyecto cuenta con un **modo demo** para visualizar la interfaz sin conexió
 ### Credenciales demo:
 - Correo: `admin@demo.com`
 - Contraseña: `admin123`
+- [Demo en vivo](https://ivansanzrey456-hue.github.io/dashboard/)
 
 > ⚠️ En modo demo no se realizan operaciones reales sobre la base de datos.
 
