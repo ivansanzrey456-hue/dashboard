@@ -2,52 +2,53 @@ import React, { useState, useEffect } from 'react';
 import '../styles/bienvenida.css';
 
 function Bienvenida({ onStart }) {
-  const [isVisible, setIsVisible] = useState(false);
-  const [hoverButton, setHoverButton] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 100);
-    return () => clearTimeout(timer);
+    setIsLoaded(true);
   }, []);
 
   return (
-    <div className="bienvenida-container">
-      {/* Partículas animadas en el fondo */}
-      <div className="bienvenida-particles">
-        {Array.from({ length: 15 }, (_, i) => (
-          <div
-            key={i}
-            className="bienvenida-particle"
-            style={{
-              '--size': `${Math.random() * 20 + 5}px`,
-              '--left': `${Math.random() * 100}%`,
-              '--top': `${Math.random() * 100}%`,
-              '--delay': `${Math.random() * 5}s`,
-              '--duration': `${Math.random() * 3 + 3}s`
-            }}
-          />
-        ))}
-      </div>
+    <div className="bienvenida-modern-container">
+      {/* Orbes luminosos de fondo */}
+      <div className="glow-orb orb-1"></div>
+      <div className="glow-orb orb-2"></div>
 
-      <div className={`bienvenida-card ${isVisible ? 'bienvenida-visible' : ''}`}>
-        <div className="bienvenida-logo">🕹️</div>
+      <div className={`bienvenida-glass-card ${isLoaded ? 'fade-in' : ''}`}>
+        <div className="badge-pill">
+          <span className="badge-dot"></span> Módulo de Gestión v2.0
+        </div>
         
-        <h1 className="bienvenida-title">
-          ¡Bienvenido a Nuestro Sistema!
+        <h1 className="bienvenida-headline">
+          Control de Acceso <br />
+          <span className="gradient-text">Piscina & Gimnasio</span>
         </h1>
         
-        <p className="bienvenida-text">
-          Gestiona usuarios, pagos y más de forma fácil y segura.
+        <p className="bienvenida-subtext">
+          Plataforma integral para la administración optimizada de socios, control de entradas y seguimiento de membresías.
         </p>
+
+        {/* Bloques de características con diseño minimalista sin íconos */}
+        <div className="features-grid">
+          <div className="feature-item">
+            <span className="feature-indicator"></span>
+            <span>Optimizado</span>
+          </div>
+          <div className="feature-item">
+            <span className="feature-indicator"></span>
+            <span>Alta Fiabilidad</span>
+          </div>
+          <div className="feature-item">
+            <span className="feature-indicator"></span>
+            <span>Tiempo Real</span>
+          </div>
+        </div>
         
-        <button
-          className={`bienvenida-button ${hoverButton ? 'bienvenida-button-hover' : ''}`}
-          onClick={onStart}
-          onMouseEnter={() => setHoverButton(true)}
-          onMouseLeave={() => setHoverButton(false)}
-        >
-          <span>Ir al Inicio de Sesión</span>
-          <span className="bienvenida-arrow">→</span>
+        <button className="modern-action-btn" onClick={onStart}>
+          <span>Iniciar Sesión en el Sistema</span>
+          <svg className="btn-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </button>
       </div>
     </div>
